@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* =========================================
+   SANKALP VISION - GLOBAL DESIGN SYSTEM
+   ========================================= */
+
+:root {
+  /* Sankalp Vision Base Colors */
+  --background: #f8fafc; /* Tailwind slate-50 */
+  --foreground: #1e293b; /* Tailwind slate-800 */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Primary font setup in layout.tsx, fallback here */
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+}
+
+/* =========================================
+   1. HERO GRADIENTS
+   ========================================= */
+.hero-gradient { 
+  background: linear-gradient(135deg, rgb(0, 52, 113) 0%, rgb(15, 23, 42) 100%); 
+}
+.radial-hero-gradient {
+  background: radial-gradient(circle at 50% 0%, rgb(0, 52, 113) 0%, rgb(0, 12, 29) 100%);
+}
+.courses-hero-gradient {
+  background: radial-gradient(circle at 80% 20%, rgb(0, 52, 113) 0%, rgb(0, 12, 29) 100%);
+}
+
+/* =========================================
+   2. NOTICE BOARD / OFFICIAL LETTER
+   ========================================= */
+.letter-paper {
+  font-family: var(--font-merriweather), 'Merriweather', serif;
+  background: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-top: 8px solid #1e3a8a; 
+}
+
+@media print {
+  body { background-color: white; margin: 0; padding: 0; }
+  .no-print { display: none !important; }
+  .letter-paper { box-shadow: none; border: none; width: 100%; padding: 0; margin: 0; }
+}
+
+/* =========================================
+   3. CARDS & HOVER EFFECTS (Bento Grid)
+   ========================================= */
+/* Facilities Page */
+.bento-card { transition: all 0.3s ease; }
+.bento-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+.img-placeholder { background: linear-gradient(45deg, #f1f5f9, #e2e8f0); }
+
+/* About Page Founders Card */
+.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+
+/* Digital Library Notes Card */
+.note-card { transition: all 0.3s ease; }
+.note-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-color: #3b82f6; }
+
+/* Student Reviews Card */
+.review-card { transition: all 0.3s ease; }
+.review-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: #facc15; }
+
+/* Courses Card */
+.course-card { transition: all 0.3s ease; }
+.course-card:hover { transform: translateY(-8px); border-color: #3b82f6; box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1); }
+
+/* =========================================
+   4. UTILITIES & SMALL COMPONENTS
+   ========================================= */
+.subject-tag { 
+  background-color: #f1f5f9; 
+  color: #475569; 
+  padding: 4px 12px; 
+  border-radius: 20px; 
+  font-size: 12px; 
+  font-weight: 600; 
+  border: 1px solid #e2e8f0; 
+  display: inline-block;
+}
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

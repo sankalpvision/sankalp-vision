@@ -29,7 +29,7 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all duration-300">
                 <i className="fa-brands fa-youtube"></i>
               </a>
-              <a href="https://wa.me/+910000000000" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300">
+              <a href="https://wa.me/917266098673" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-green-500 hover:text-white transition-all duration-300">
                 <i className="fa-brands fa-whatsapp text-lg"></i>
               </a>
             </div>
@@ -97,11 +97,14 @@ export default function Footer() {
             <ul className="space-y-4 text-[14px]">
               <li className="flex items-start">
                 <i className="fa-solid fa-location-dot mt-1 mr-3 text-yellow-500"></i>
-                <span className="text-slate-400">1600 Sq.Ft Premium Campus,<br />Jhansi, Uttar Pradesh - 284001</span>
+                <span className="text-slate-400">Near Eldeco Gate, Rajgarh Main Road,<br />Jhansi, Uttar Pradesh - 284135</span>
               </li>
-              <li className="flex items-center">
-                <i className="fa-solid fa-phone mr-3 text-yellow-500"></i>
-                <a href="tel:+910000000000" className="text-slate-400 hover:text-white transition-colors">+91 XXXXX XXXXX</a>
+              <li className="flex items-start">
+                <i className="fa-solid fa-phone mt-1 mr-3 text-yellow-500"></i>
+                <div className="flex flex-col">
+                  <a href="tel:+917266098673" className="text-slate-400 hover:text-white transition-colors">+91 72660 98673</a>
+                  <a href="tel:+917503879879" className="text-slate-400 hover:text-white transition-colors mt-1">+91 75038 79879</a>
+                </div>
               </li>
               <li className="flex items-center">
                 <i className="fa-solid fa-envelope mr-3 text-yellow-500"></i>

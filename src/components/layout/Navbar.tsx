@@ -27,19 +27,21 @@ export default function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
+  // UPDATED: Added Contact page link
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
+    { name: "About", path: "/about" },
     { name: "Courses", path: "/courses" },
     { name: "Facilities", path: "/facilities" },
     { name: "Library", path: "/library" },
-    { name: "Notice Board", path: "/events" },
+    { name: "Notices", path: "/events" },
     { name: "Reviews", path: "/reviews" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <>
-      {/* Desktop Navbar (Kept the highly refined version) */}
+      {/* Desktop Navbar */}
       <nav 
         className={`fixed w-full z-[60] top-0 transition-all duration-500 ease-out no-print ${
           scrolled && !isMobileMenuOpen
@@ -52,7 +54,7 @@ export default function Navbar() {
            <div className="absolute inset-0 bg-white shadow-sm -z-10"></div>
         )}
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="max-w-[85rem] mx-auto px-6 lg:px-10">
           <div className="flex justify-between items-center h-[72px]">
             
             {/* Logo */}
@@ -64,14 +66,14 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden xl:flex items-center space-x-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.path;
                 return (
                   <Link 
                     key={link.name} 
                     href={link.path} 
-                    className="relative group px-4 py-2"
+                    className="relative group px-3 py-2"
                   >
                     <span className={`text-[14px] font-medium tracking-wide transition-colors duration-300 ${
                       isActive ? 'text-blue-700' : 'text-slate-600 hover:text-blue-950'
@@ -79,7 +81,7 @@ export default function Navbar() {
                       {link.name}
                     </span>
                     <span className={`absolute bottom-1 left-1/2 h-[2px] bg-blue-600 transition-all duration-300 ease-out -translate-x-1/2 ${
-                      isActive ? 'w-[calc(100%-2rem)]' : 'w-0 group-hover:w-[calc(100%-2rem)]'
+                      isActive ? 'w-[calc(100%-1.5rem)]' : 'w-0 group-hover:w-[calc(100%-1.5rem)]'
                     }`}></span>
                   </Link>
                 );
@@ -95,8 +97,8 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Premium Interactive Hamburger Button (Changes color if menu is open) */}
-            <div className="lg:hidden flex items-center relative z-[60]">
+            {/* Premium Interactive Hamburger Button */}
+            <div className="xl:hidden flex items-center relative z-[60]">
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="w-10 h-10 flex flex-col justify-center items-end focus:outline-none group"
@@ -124,7 +126,7 @@ export default function Navbar() {
           PREMIUM FULL-SCREEN CINEMATIC MOBILE MENU 
           ========================================= */}
       <div 
-        className={`fixed inset-0 z-50 bg-[#0a192f] flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] lg:hidden ${
+        className={`fixed inset-0 z-50 bg-[#0a192f] flex flex-col justify-center items-center transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] xl:hidden ${
           isMobileMenuOpen 
             ? 'opacity-100 visible clip-path-full' 
             : 'opacity-0 invisible pointer-events-none'
@@ -134,7 +136,7 @@ export default function Navbar() {
         <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-yellow-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <div className="flex flex-col items-center justify-center space-y-6 w-full px-6 relative z-10">
+        <div className="flex flex-col items-center justify-center space-y-5 w-full px-6 relative z-10">
           {navLinks.map((link, index) => {
             const isActive = pathname === link.path;
             return (
@@ -145,9 +147,8 @@ export default function Navbar() {
                 <Link 
                   href={link.path} 
                   onClick={() => setIsMobileMenuOpen(false)}
-                  // The Staggered Slide-up Animation magic is here:
-                  style={{ transitionDelay: isMobileMenuOpen ? `${100 + index * 50}ms` : '0ms' }}
-                  className={`inline-block text-3xl font-extrabold tracking-tight transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  style={{ transitionDelay: isMobileMenuOpen ? `${100 + index * 40}ms` : '0ms' }}
+                  className={`inline-block text-2xl font-extrabold tracking-tight transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                     isMobileMenuOpen 
                       ? 'translate-y-0 opacity-100' 
                       : 'translate-y-full opacity-0'
@@ -156,20 +157,20 @@ export default function Navbar() {
                   }`}
                 >
                   {link.name}
-                  {isActive && <span className="block w-2 h-2 bg-yellow-400 rounded-full mx-auto mt-2"></span>}
+                  {isActive && <span className="block w-2 h-2 bg-yellow-400 rounded-full mx-auto mt-1"></span>}
                 </Link>
               </div>
             );
           })}
 
           <div 
-            className="overflow-hidden mt-10 w-full flex justify-center"
-            style={{ transitionDelay: isMobileMenuOpen ? `${100 + navLinks.length * 50 + 100}ms` : '0ms' }}
+            className="overflow-hidden mt-8 w-full flex justify-center"
+            style={{ transitionDelay: isMobileMenuOpen ? `${100 + navLinks.length * 40 + 100}ms` : '0ms' }}
           >
             <Link 
               href="/#demo" 
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`inline-flex items-center justify-center bg-white text-[#0a192f] px-8 py-4 rounded-full text-lg font-bold tracking-wide transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_10px_30px_rgba(255,255,255,0.15)] hover:scale-105 ${
+              className={`inline-flex items-center justify-center bg-white text-[#0a192f] px-8 py-3.5 rounded-full text-lg font-bold tracking-wide transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_10px_30px_rgba(255,255,255,0.15)] hover:scale-105 ${
                 isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
               }`}
             >

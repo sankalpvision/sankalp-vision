@@ -2,6 +2,7 @@
   "name": "sankalp-vision",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -33,7 +34,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/sankalpvision/sankalp-vision/issues"
   },
